@@ -1,4 +1,4 @@
-# SaveGMailAsEML
+# How to backup GMail and store in local computer as eml file?
 
 Do you want to save your GMail messages to local computer without third-party softwares? If yes, then you have come to the right repository. Welcome!
 
