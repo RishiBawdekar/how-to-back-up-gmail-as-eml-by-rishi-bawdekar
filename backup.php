@@ -152,7 +152,6 @@ THE SOFTWARE.
 				 {
 					 if ($.trim($("input[type=date]")[i].value).length)
 					 {
-						 //console.log(($("input[type=date]")[i].id));
 						 query += qdate[i] + $("input[type=date]")[i].value + " ";
 					 }
 				 }		 
@@ -160,7 +159,6 @@ THE SOFTWARE.
 				 {
 					 if ($.trim($("input[type=text]")[j].value).length)
 					 {
-						 //console.log(($("input[type=text]")[j].id));
 						 query += qtext[j] + $("input[type=text]")[j].value + " ";
 					 }
 				 }
