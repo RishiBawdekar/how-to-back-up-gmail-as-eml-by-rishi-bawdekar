@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="MmQvHlAMCnxYpkAnOjZgK-8RuXKS_G_dDfCTbGdi3hY" />
+    <title>How to save GMail messages on your computer? by RishiBawdekar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">How to save GMail messages on your computer?</h1>
+      <h2 class="project-tagline">The software downloads GMail messages to your local computer. It stores them in .eml format. The downloaded emails can be viewed using Windows Live Mail or Windows Mail 10.</h2>
+      <a href="https://github.com/RishiBawdekar/SaveGMailAsEML" class="btn">View on GitHub</a>
+      <a href="https://github.com/RishiBawdekar/SaveGMailAsEML/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/RishiBawdekar/SaveGMailAsEML/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <p>The GMail Application Program Interface (API) is written in Javascript. PHP is required. The programs talk <strong>ONLY</strong> to Google and your data is not shared with anyone.</p>
+
+      <p>Here is a video demonstration: </p>
+      <div class="video-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/HVDsb5gxRVo" frameborder="0" allowfullscreen></iframe>
+      </div>
+      
+<h1>
+<a id="1-how-does-it-works" class="anchor" href="#1-how-does-it-works" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1. How does it works?</h1>
+
+<ol>
+<li>Download the zip file. Extract contents to <em>www</em> directory of WAMP. (See Section 2). Rename the folder to <em>SaveGMailAsEML</em>.</li>
+<li>Go to <em>SaveGMailAsEML</em> folder and open <em>backup.php</em> file in Notepad. Find <em>CLIENT_ID</em> and replace <em>your-google-client-id</em> with your client id obtained in step 3. Save and close.</li>
+<li>Open Chrome and type in -&gt; http://localhost/SaveGMailAsEML/backup.php</li>
+<li>Click on <em>Login With GMail</em>. Type in your username and password. If you are already logged in, you will directed to <em>Request For Permission</em> page. Click <em>Allow</em>. You will be directed to app homepage.</li>
+<li>After initialization, you will find your GMail labels under <em>Labels</em>.</li>
+<li>Choose a GMail label and click on <em>Start Back UP</em>.</li>
+<li>A folder will be created in <em>SaveGMailAsEML</em> folder with name of your GMail label. Sub-folders will be created within that folder for pages and emails without attachments.</li>
+<li>Status message appears on webpage when download is complete.</li>
+</ol>
+
+<p>The downloaded emails are in <em>.eml</em> format. They can be viewed using Windows Live Mail or Windows Mail 10.</p>
+
+<p>The time limit for receiving data from Google is 30 seconds (which is adjustable). If time exceeds 30 seconds, then the email is saved without attachment.</p>
+
+<p>It is recommended to run the program while keeping the console window open. The code has been tested on Chrome Version 54.0.2840.71.The source-code can be easily modified.</p>
+
+<p><strong>In order to use this application, there are few prerequisites:</strong></p>
+
+<h1>
+<a id="2-localhost" class="anchor" href="#2-localhost" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2. Localhost</h1>
+
+<p>You need to have localhost server. Many localhost servers are available. I have used WAMP. The website is <a href="http://www.wampserver.com/en/">http://www.wampserver.com/en/</a>.</p>
+
+      <p>Here is a link to YouTube video on how to install:</p>
+      <div class="video-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/RZTYqTGqtjI" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+<p>Before you download WAMP, ensure you have downloaded the prerequisite software.</p>
+
+<p>Troubleshooting some common errors</p>
+
+<ol>
+<li><p><a href="http://stackoverflow.com/questions/34215395/wamp-wont-turn-green-vcruntime140-dll-error">Wamp Won't Turn Green &amp; VCRUNTIME140.dll error</a></p></li>
+<li><p><a href="http://stackoverflow.com/questions/17168624/wamp-server-not-goes-to-green-color">Wamp Server not goes to green color</a></p></li>
+<li>
+<p>PHP Warning:  Unknown: POST Content-Length of X bytes exceeds the limit of 8388608 bytes in Unknown on line 0</p>
+
+<pre><code>   a. Open php.ini file.
+   b. Find post_max_size. Change limit from 8M to 2000M. If problem still 
+      occurs, change limit further.
+</code></pre>
+</li>
+</ol>
+
+<h1>
+<a id="3-how-to-get-google-client-id" class="anchor" href="#3-how-to-get-google-client-id" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3. How to get Google Client ID?</h1>
+
+<ol>
+<li>Login to your GMail account.</li>
+<li>Open link -&gt; <a href="https://console.developers.google.com/flows/enableapi?apiid=gmail">https://console.developers.google.com/flows/enableapi?apiid=gmail</a>
+</li>
+<li>Select <em>Create a Project</em> and continue.</li>
+<li>Once GMail API is enabled, click on <em>Go to credential's</em>.</li>
+<li>Click on <em>client ID</em>. Click <em>Configure consent screen</em>.</li>
+<li>In product name, type <em>SaveGMailAsEML</em> and save.</li>
+<li>Select Web application.</li>
+<li>In <em>Authorized JavaScript origins</em>, type in <em>http://localhost</em>.</li>
+<li>Click <em>Create</em>.</li>
+<li>Copy your client ID.</li>
+</ol>
+
+<h1>
+<a id="4-enable-imap-in-gmail" class="anchor" href="#4-enable-imap-in-gmail" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4. Enable IMAP in GMail.</h1>
+
+<h1>
+<a id="5-known-errors-and-solutions" class="anchor" href="#5-known-errors-and-solutions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5. Known errors and solutions:</h1>
+
+<ol>
+<li><p>The access token is valid for 1 hour. If the program runs for more than 1 hour, an error will be shown in console window. When this happens refresh and run again. Use the <em>Continue from page</em> option and structure your query using label, dates, to, from, subject fields to start where you had left off.</p></li>
+<li><p>Sometimes you may get resource exceeded or quota error. When this happens, refresh and use the guide above to structure your query to start where you had left off.</p></li>
+<li><p>Sometimes you mat get <em>Aw, Snap</em> error. Refresh and start again.</p></li>
+</ol>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/RishiBawdekar/SaveGMailAsEML">How to save GMail messages on your computer?</a> is maintained by <a href="https://github.com/RishiBawdekar">RishiBawdekar</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
